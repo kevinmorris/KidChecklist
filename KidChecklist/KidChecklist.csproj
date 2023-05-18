@@ -15,7 +15,7 @@
 		<ApplicationTitle>KidChecklist</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.kidchecklist</ApplicationId>
+		<ApplicationId>pro.kevinmorris.kidchecklist</ApplicationId>
 		<ApplicationIdGuid>d8f9f760-d4ec-4a8d-a4ec-dfc2bdf57518</ApplicationIdGuid>
 
 		<!-- Versions -->
@@ -50,5 +50,11 @@
 	<ItemGroup>
 	  <Folder Include="Resources\Splash\" />
 	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="CommunityToolkit.Maui" Version="2.0.0" />
+	</ItemGroup>
+
+	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadDebuggerTimeoutExceptionKidChecklistHideInfoBar="True" /></VisualStudio></ProjectExtensions>
 
 </Project>
