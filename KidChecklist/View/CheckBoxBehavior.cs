@@ -37,6 +37,7 @@ namespace KidChecklist.View
         {
             var isChecked = Item.IsChecked;
             Item.CheckCommand.Execute(!isChecked);
+            ((CheckBoxView)sender).Check(Item.IsChecked);
         }
     }
 }
