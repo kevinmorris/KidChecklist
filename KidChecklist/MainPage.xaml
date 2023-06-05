@@ -38,14 +38,10 @@
             <DataTemplate>
                 <ViewCell>
                     <FlexLayout>
-                        <view:CheckBoxView WidthRequest="80"
+                        <view:CheckBoxView WidthRequest="{StaticResource CheckBoxSize}"
                                            Drawable="{StaticResource CheckBoxDrawable}">
                             <view:CheckBoxView.Behaviors>
                                 <view:CheckBoxBehavior Item="{Binding}" />
-                                <!--<mct:EventToCommandBehavior
-                                    EventName="CheckedChanged"
-                                    Command="{Binding CheckCommand}"
-                                    CommandParameter="{Binding Path=IsChecked, Source={x:Reference CheckBox}}" />-->
                             </view:CheckBoxView.Behaviors>
                         </view:CheckBoxView>
                         <Label Text="{Binding Title}"/>
