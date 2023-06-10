@@ -15,10 +15,12 @@ namespace KidChecklist.Model
         public ICommand CheckCommand { get; }
         public event EventHandler CheckChanged;
         public bool IsChecked { get; private set; }
+        public int MediaIndex { get; private set; }
 
         public ChecklistItem()
         {
             CheckCommand = new Command<bool>(ExecuteChecked);
+            MediaIndex = new Random().Next(1, 152);
         }
 
         private void ExecuteChecked(bool check)

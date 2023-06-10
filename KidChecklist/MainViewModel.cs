@@ -4,10 +4,13 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Plugin.Maui.Audio;
+
 // ReSharper disable All
 
 namespace KidChecklist
@@ -16,6 +19,8 @@ namespace KidChecklist
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
+        private readonly Assembly _assembly = typeof(MainViewModel).Assembly;
+        private readonly IAudioManager _audioManager;
         public ObservableCollection<ChecklistItem> Items { get; }
 
         private bool _isAllChecked;
@@ -34,6 +39,7 @@ namespace KidChecklist
 
         public MainViewModel()
         {
+            _audioManager = AudioManager.Current;
             Items = new ObservableCollection<ChecklistItem>
             {
                 new()

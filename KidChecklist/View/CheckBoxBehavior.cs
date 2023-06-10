@@ -10,16 +10,7 @@ namespace KidChecklist.View
 {
     public class CheckBoxBehavior : BaseBehavior<CheckBoxView>
     {
-        public static readonly BindableProperty ItemProperty = BindableProperty.Create(
-            nameof(Item),
-            typeof(ChecklistItem),
-            typeof(CheckBoxBehavior));
-
-        public ChecklistItem Item
-        {
-            get => (ChecklistItem)GetValue(ItemProperty);
-            set => SetValue(ItemProperty, value);
-        }
+        public ChecklistItem Item { get; set; }
 
         protected override void OnAttachedTo(CheckBoxView bindable)
         {

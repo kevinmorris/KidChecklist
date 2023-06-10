@@ -37,14 +37,9 @@
             <DataTemplate>
                 <ViewCell>
                     <FlexLayout>
-                        <FlexLayout.Resources>
-                            <view:CheckBoxDrawable x:Key="CheckBoxDrawable" />
-                        </FlexLayout.Resources>
-                        <view:CheckBoxView WidthRequest="80"
-                                           Drawable="{StaticResource CheckBoxDrawable}">
-                            <view:CheckBoxView.Behaviors>
-                                <view:CheckBoxBehavior Item="{Binding}" />
-                            </view:CheckBoxView.Behaviors>
+                        <view:CheckBoxView 
+                            Item="{Binding}"
+                            WidthRequest="80">
                         </view:CheckBoxView>
                         <Label Text="{Binding Title}"/>
                     </FlexLayout>
