@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:local="clr-namespace:KidChecklist"
+             xmlns:view="clr-namespace:KidChecklist.View"
+             BackgroundColor="{StaticResource Primary}"
+             x:Class="KidChecklist.MainPage"
+             Padding="0,10,0,10">
+
+    <ContentPage.BindingContext>
+        <local:MainViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Thickness x:Key="ChecklistItemMargin">20,10,20,10</Thickness>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="36"/>
+            </Style>
+            <Style TargetType="FlexLayout">
+                <Setter Property="Margin" Value="{StaticResource ChecklistItemMargin}" />
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="JustifyContent" Value="Start" />
+                <Setter Property="AlignItems" Value="Center" />
+            </Style>
+            <Style TargetType="CheckBox">
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ListView ItemsSource="{Binding Items}"
+              SelectionMode="None"
+              RowHeight="100"
+              SeparatorVisibility="None">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <FlexLayout>
+                        <view:CheckBoxView 
+                            Item="{Binding}"
+                            WidthRequest="80">
+                        </view:CheckBoxView>
+                        <Label Text="{Binding Title}"/>
+                    </FlexLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>
